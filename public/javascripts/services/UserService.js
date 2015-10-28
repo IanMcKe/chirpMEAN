@@ -1,4 +1,4 @@
-chirpApp.factory('UserService', function UserService($http, $location) {
+chirpApp.factory('UserService', function UserService($http, $state) {
   var factory = {};
   factory.authenticated = false;
   factory.current_user = '';
@@ -11,7 +11,7 @@ chirpApp.factory('UserService', function UserService($http, $location) {
       if(data.state == 'success'){
         factory.authenticated = true;
         factory.current_user = data.user.username;
-        $location.path('');
+        $state.go('home');
       } else {
         factory.error_message = data.message;
         console.log(factory.error_message);
@@ -24,7 +24,7 @@ chirpApp.factory('UserService', function UserService($http, $location) {
       if(data.state == 'success'){
         factory.authenticated = true;
         factory.current_user = data.user.username;
-        $location.path('');
+        $state.go('home');
       } else {
         factory.error_message = data.message;
         console.log(factory.error_message);
