@@ -1,7 +1,6 @@
 var chirpApp = angular.module('chirpApp', ['ui.router', 'ngResource']);
 
 chirpApp.config(function($stateProvider, $urlRouterProvider) {
-  // $urlRouterProvider.when('/#/home', '');
 
   $stateProvider.state('home', {
     url: "",
